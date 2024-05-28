@@ -6,62 +6,42 @@ import java.net.InetAddress;
 public class CommunicationData implements Serializable {
     private static final long serialVersionUID = 1234567890L;
 
-    String from;
-    String to;
-    String message;
-    Integer type;
-    String fromIPAddress;
+    String QuestionNumber;
+    String AnswerNumber;
+    InetAddress fromIPAddress;
 
-    public CommunicationData(String from, String to, String message, Integer type) {
-        this.from = from;
-        this.to = to;
-        this.message = message;
-        this.type = type;
-        //gtesting
+    public CommunicationData(String questionNumber, String answerNumber, InetAddress fromIPAddress) {
+        this.QuestionNumber = questionNumber;
+        this.AnswerNumber = answerNumber;
+        this.fromIPAddress = fromIPAddress;
     }
 
-    public String getFrom() {
-        return from;
+    public String getQuestionNumber() {
+        return QuestionNumber;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setQuestionNumber(String questionNumber) {
+        QuestionNumber = questionNumber;
     }
 
-    public String getTo() {
-        return to;
+    public String getAnswerNumber() {
+        return AnswerNumber;
     }
 
-    public void setTo(String to) {
-        this.to = to;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
+    public void setAnswerNumber(String answerNumber) {
+        AnswerNumber = answerNumber;
     }
 
     public String getFromIPAddress() {
         return fromIPAddress;
     }
 
-    public void setFromIPAddress(InetAddress fromIPAddress) {
-        this.fromIPAddress = fromIPAddress.getHostAddress();
+    public void setFromIPAddess(String fromIPAddress) {
+        this.fromIPAddress = fromIPAddress;
     }
 
     public String toString() {
-        return "Message: \"" + message + " from: " + from + fromIPAddress + " to:" + to;
+        return "Message: \"" + AnswerNumber + " from: " + fromIPAddress + " to:";
     }
 
 }
