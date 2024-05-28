@@ -8,9 +8,9 @@ public class CommunicationData implements Serializable {
 
     String QuestionNumber;
     String AnswerNumber;
-    InetAddress fromIPAddress;
+    String fromIPAddress;
 
-    public CommunicationData(String questionNumber, String answerNumber, InetAddress fromIPAddress) {
+    public CommunicationData(String questionNumber, String answerNumber, String fromIPAddress) {
         this.QuestionNumber = questionNumber;
         this.AnswerNumber = answerNumber;
         this.fromIPAddress = fromIPAddress;
@@ -32,14 +32,15 @@ public class CommunicationData implements Serializable {
         AnswerNumber = answerNumber;
     }
 
+    public void setFromIPAddress(InetAddress fromIPAddress) {
+        this.fromIPAddress = fromIPAddress.getHostAddress();
+    }
+    public void setFromIPAddress(String fromIPAddress) {
+        this.fromIPAddress = fromIPAddress;
+    }
     public String getFromIPAddress() {
         return fromIPAddress;
     }
-
-    public void setFromIPAddess(String fromIPAddress) {
-        this.fromIPAddress = fromIPAddress;
-    }
-
     public String toString() {
         return "Message: \"" + AnswerNumber + " from: " + fromIPAddress + " to:";
     }
