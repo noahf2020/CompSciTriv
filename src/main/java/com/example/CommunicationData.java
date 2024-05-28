@@ -6,43 +6,62 @@ import java.net.InetAddress;
 public class CommunicationData implements Serializable {
     private static final long serialVersionUID = 1234567890L;
 
-    String QuestionNumber;
-    String AnswerNumber;
+    String from;
+    String to;
+    String answer;
+    Integer type;
     String fromIPAddress;
 
-    public CommunicationData(String questionNumber, String answerNumber, String fromIPAddress) {
-        this.QuestionNumber = questionNumber;
-        this.AnswerNumber = answerNumber;
-        this.fromIPAddress = fromIPAddress;
+    public CommunicationData(String from, String to, String answer, Integer type) {
+        this.from = from;
+        this.to = to;
+        this.answer = answer;
+        this.type = type;
+        //gtesting
     }
 
-    public String getQuestionNumber() {
-        return QuestionNumber;
+    public String getFrom() {
+        return from;
     }
 
-    public void setQuestionNumber(String questionNumber) {
-        QuestionNumber = questionNumber;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
-    public String getAnswerNumber() {
-        return AnswerNumber;
+    public String getTo() {
+        return to;
     }
 
-    public void setAnswerNumber(String answerNumber) {
-        AnswerNumber = answerNumber;
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String message) {
+        this.answer = message;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public String getFromIPAddress() {
+        return fromIPAddress;
     }
 
     public void setFromIPAddress(InetAddress fromIPAddress) {
         this.fromIPAddress = fromIPAddress.getHostAddress();
     }
-    public void setFromIPAddress(String fromIPAddress) {
-        this.fromIPAddress = fromIPAddress;
-    }
-    public String getFromIPAddress() {
-        return fromIPAddress;
-    }
+
     public String toString() {
-        return "Message: \"" + AnswerNumber + " from: " + fromIPAddress + " to:";
+        return "Message: \"" + answer + " from: " + from + fromIPAddress + " to:" + to;
     }
 
 }

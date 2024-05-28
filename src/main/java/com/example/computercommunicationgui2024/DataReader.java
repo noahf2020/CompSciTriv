@@ -22,7 +22,7 @@ public class DataReader implements Runnable {
                 if (inObject instanceof CommunicationData) {
                     inMessage1 = (CommunicationData) inObject;
                 } else {
-                    inMessage1 = new CommunicationData("WHU?", "ALL", "BAD DATA: ");
+                    inMessage1 = new CommunicationData("WHU?", "ALL", "BAD DATA: ",0);
                 }
 
                 InetAddress fromIPAddress = client.getActualSocket().getInetAddress();
