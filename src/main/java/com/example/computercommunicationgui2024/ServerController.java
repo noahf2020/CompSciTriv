@@ -28,10 +28,6 @@ public class ServerController extends ClientServerController {
         clientIPsColumn.setCellValueFactory(new PropertyValueFactory<ClientConnection, String>("clientIP"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<ClientConnection, String>("name"));
 
-        IPColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("fromIPAddress"));
-        fromColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("from"));
-        toColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("to"));
-        messageColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("message"));
 
         connector = new ServerSocketConnector(this);
         connectorThread = new Thread(connector);

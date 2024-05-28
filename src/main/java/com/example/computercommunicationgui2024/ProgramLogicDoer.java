@@ -40,7 +40,7 @@ public class ProgramLogicDoer implements Runnable {
                 }
                 try {
                     if (serverMode) {
-                        if (inMessage1.getMessage().equalsIgnoreCase("ID") &&
+                        if (inMessage1.getAnswer().equalsIgnoreCase("ID") &&
                                 inMessage1.getTo().equalsIgnoreCase("SERVER")) {
                             String clientName = inMessage1.getFrom();
                             for (ClientConnection aClient: manyClients) {
