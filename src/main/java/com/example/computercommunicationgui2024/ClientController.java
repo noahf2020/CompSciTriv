@@ -1,26 +1,34 @@
 package com.example.computercommunicationgui2024;
 
 import com.example.CommunicationData;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.Socket;
 
 public class ClientController extends ClientServerController {
-    public TextField From;
-    public TextField To;
-    public TextField messageTyped;
+
+    public TableView tableView;
+    public TableColumn Questions;
+    public TableColumn A;
+    public TableColumn B;
+    public TableColumn C;
+    public TableColumn D;
+    public Button buttonA;
+    public Button buttonB;
+    public Button buttonC;
+    public Button buttonD;
     MyCoolDataStructure queue;
     ClientConnection serverConnection;
 
     public void initialize() throws Exception {
-        IPColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("fromIPAddress"));
-        fromColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("from"));
-        toColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("to"));
-        messageColumn.setCellValueFactory(new PropertyValueFactory<CommunicationData, String>("message"));
+
 
         System.out.println("Connecting to my server");
-        Socket newSocket = new Socket("10.37.157.240",3256);
+        Socket newSocket = new Socket("10.37.146.33",3256);
         queue = new MyCoolDataStructure();
         serverConnection = new ClientConnection(newSocket);
         DataReader myDataReader = new DataReader(serverConnection, queue);
@@ -36,8 +44,6 @@ public class ClientController extends ClientServerController {
     }
 
     public void sendMessage() throws Exception {
-        CommunicationData data1 = new CommunicationData(From.getText(), To.getText(), messageTyped.getText(), 0);
-        serverConnection.getObjOut().writeObject(data1);
-        System.out.println("ClientController sendMessage() wrote: " + data1);
+
     }
 }

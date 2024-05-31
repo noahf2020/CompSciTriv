@@ -32,7 +32,8 @@ public class ProgramLogicDoer implements Runnable {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            theController.allMessages.getItems().add(finalInMessage);
+                            //theController.allMessages.getItems().add(finalInMessage);
+                            System.out.println("ProgramLogicDoer got: " + finalInMessage);
                         }
                     });
                 } else {
@@ -57,6 +58,9 @@ public class ProgramLogicDoer implements Runnable {
                                 aClient.getObjOut().writeObject(inMessage1);
                             }
                         }
+                    } else {
+
+                        // react to messages from server!!!!
                     }
                 } catch (Exception ex) {
                     System.out.println(ex);
