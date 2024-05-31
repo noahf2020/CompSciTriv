@@ -1,6 +1,7 @@
 package com.example.computercommunicationgui2024;
 
 import com.example.CommunicationData;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -15,11 +16,8 @@ public class ServerController extends ClientServerController {
     public TableColumn<ClientConnection, String> clientIPsColumn;
     public TableColumn<ClientConnection, String> nameColumn;
 
-    public TableView<CommunicationData> allMessages;
-    public TableColumn<CommunicationData, String> IPColumn;
-    public TableColumn<CommunicationData, String> fromColumn;
-    public TableColumn<CommunicationData, String> toColumn;
-    public TableColumn<CommunicationData, String> messageColumn;
+    public TextField Questions;
+    public Button Send;
 
     static ServerSocketConnector connector;
     static Thread connectorThread;

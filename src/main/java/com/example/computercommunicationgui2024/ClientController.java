@@ -1,26 +1,15 @@
 package com.example.computercommunicationgui2024;
 
 import com.example.CommunicationData;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.Socket;
 
 public class ClientController extends ClientServerController {
 
-    public TableView tableView;
-    public TableColumn Questions;
-    public TableColumn A;
-    public TableColumn B;
-    public TableColumn C;
-    public TableColumn D;
-    public Button buttonA;
-    public Button buttonB;
-    public Button buttonC;
-    public Button buttonD;
+   public TextField answer;
+   public ListView questions;
     MyCoolDataStructure queue;
     ClientConnection serverConnection;
 
